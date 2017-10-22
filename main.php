@@ -173,7 +173,7 @@ class Duck extends Item
 
     public function getFullDescription($itemType = true)
     {
-        $format = "Возраст этой утки %u, ее вес %u кг.<br>";
+        $format = " Возраст этой утки %u лет, ее вес %u кг.<br>";
         return ' Утка ' . parent::getFullDescription(false) .
             sprintf($format, $this->getAge(), $this->getWeight());
     }
@@ -208,8 +208,8 @@ class Product extends Item
 
     public function getFullDescription($itemType = true)
     {
-        $format = "Товар %1\$s %2\$s цвета %3\s цена %4\$u руб., скидка на всю группу %1\$s - %5\$u, 
-          скидка именно на %1\$s %2\$s - %6\$u. <br>";
+        $format = "Товар %1\$s %2\$s цвета %3\s цена %4\$u руб., скидка на всю группу %1\$s - %5\$u процентов, 
+          скидка именно на %1\$s %2\$s - %6\$u процентов. <br>";
         return vsprintf($format, $this->getProductInfo());
     }
 
@@ -310,8 +310,8 @@ $whitePen = new Pen('Pen1', 10, 'white');
 $whitePen->setInkLevel(80);
 $whitePen->setThickness('0.5');
 $blackPen = new Pen('Pen2', 20, 'black');
-$whitePen->setInkLevel();
-$whitePen->setThickness('0.7');
+$blackPen->setInkLevel();
+$blackPen->setThickness('0.7');
 
 for ($i = 0; $i < 150; $i++) {
     if (rand(1, 2) === 1) {
