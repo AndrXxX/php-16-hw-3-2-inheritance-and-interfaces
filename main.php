@@ -57,7 +57,7 @@ class Car extends Item
 
     public function getFullDescription($itemType = true)
     {
-        return ' Машина ' . parent::getFullDescription(false);
+        return ' Машина ' . parent::getFullDescription(false) . '<br>';
     }
 }
 
@@ -277,10 +277,9 @@ class Product extends Item
 $carAudi = new Car('Audi', 1000000, 'white');
 $carKia = new Car('Kia', 800000, 'black');
 
-$formatCar = "Машина: %s цвета %s и стоимостью %u руб.<br>";
 
-echo sprintf($formatCar, $carAudi->getName(), $carAudi->getColor(), $carAudi->getCost());
-echo sprintf($formatCar, $carKia->getName(), $carKia->getColor(), $carKia->getCost());
+echo $carAudi->getFullDescription();
+echo $carKia->getFullDescription();
 echo '<br>';
 
 /* ----------- */
