@@ -72,12 +72,12 @@ class TelevisionSet extends Item
 
     public function volumeUp()
     {
-        $this->volume = ($this->state === self::STATE_ON) && ($this->volume) < 100 ? ++$this->volume : $this->volume;
+        $this->volume = (($this->state === self::STATE_ON) && ($this->volume < 100)) ? ++$this->volume : $this->volume;
     }
 
     public function volumeDown()
     {
-        $this->volume = ($this->state === self::STATE_ON) && ($this->volume) > 0 ? --$this->volume : $this->volume;
+        $this->volume = (($this->state === self::STATE_ON) && ($this->volume > 0)) ? --$this->volume : $this->volume;
     }
 
     public function turnOn()
@@ -114,7 +114,7 @@ class TelevisionSet extends Item
 
     public function setChannel($channel)
     {
-        $this->channel = $this->state === self::STATE_ON ? $channel : $this->channel;
+        $this->channel = ($this->state === self::STATE_ON) ? $channel : $this->channel;
     }
 }
 

@@ -141,7 +141,7 @@ final class Telescope extends Product
      */
     public function getProductDiscount()
     {
-        return (isset($this->productDiscount)) && ($this->getWeight() > 10) ? $this->productDiscount : 0;
+        return (isset($this->productDiscount) && ($this->getWeight() > 10)) ? $this->productDiscount : 0;
     }
 }
 
